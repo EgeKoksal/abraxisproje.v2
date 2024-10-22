@@ -1,0 +1,226 @@
+:root {
+  --font-primary: Cantarell;
+  --font-secondary: "Arial", sans-serif;
+}
+
+:root[data-theme="light"] {
+  --clr-font: hsl(0, 0%, 1%); /* font */
+  --clr-navbar: hsl(0, 0%, 87%); /* navbar */
+  --clr-menu: hsl(0, 0%, 81%); /* menü */
+  --clr-hover: hsl(0, 0%, 76%); /* hover */
+  --clr-anaekran: hsl(0, 0%, 87%); /* anaekran */
+  --clr-li: hsl(0, 0%, 87%); /* li */
+  --clr-widget: hsl(0, 0%, 81%); /* widget */
+  --clr-icon: hsl(0, 7%, 94%); /* icon */
+  --clr-primary-9: #252525; 
+}
+
+:root[data-theme="dark"] {
+  --clr-font: #d5d2db; /* font */
+  --clr-navbar: #181717; /* navbar */
+  --clr-menu: #181717; /* menü */
+  --clr-hover: #303030; /* hover */
+  --clr-anaekran: #06010f; /* anaekran */
+  --clr-li: #181717; /* li */
+  --clr-widget: #181717; /* widget */
+  --clr-icon: #d5d2db; /* icon */
+  --clr-gridline: #303030; 
+}
+
+body {
+  background-color: var(--clr-anaekran);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex; /* Flexbox düzeni */
+  flex-direction: column; /* Dikey düzen */
+}
+
+.brand {
+  position: relative;
+  width: 15%;
+  margin-right: auto; /* Sağda boşluk bırak */
+}
+
+.logo {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  left: 5%;
+  z-index: 1000;
+}
+
+.navbar {
+  position: relative;
+  background-color: var(--clr-navbar);
+  width: 65%;
+  left: 12%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.sections {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+li {
+  background-color: var(--clr-li);
+  color: var(--clr-font);
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.4s linear;
+  padding: 5px 20px; /* İçerik ile kenarlar arasında boşluk oluştur */
+  margin-right: 10px;
+}
+
+li:last-child {
+  margin-right: 0; /* Son elemanın sağında boşluk olmasın */
+}
+
+li:hover {
+  background-color: var(--clr-hover);
+}
+
+.sections i {
+  padding: 8%;
+}
+
+.alert-item:hover {
+  background-color: rgb(153, 27, 27);
+  color: white;
+}
+
+.theme-toggle {
+  position: absolute;
+  display: inline-block;
+  left: 80.5%;
+  top: 3%;
+  width: 60px;
+  height: 30px; 
+  border-radius: 15px;
+  background-color: var(--clr-hover);
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.toggle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(241, 241, 241);
+  transition: transform 0.4s ease;
+  z-index: 2; 
+}
+
+.toggle.dark {
+  transform: translateX(30px);
+}
+
+/* Güneş ve Ay ikonları için stil */
+.icon {
+  position: absolute;
+  top: 47%;
+  transform: translateY(-50%);
+  font-size: 14px; /* İkon boyutu */
+  transition: transform 0.4s ease;
+  z-index: 1; /* Toggle topu ikonların üstünde */
+}
+
+.sun-icon {
+  right: 5px; /* Güneş ikonunu sağa dayayalım */
+}
+
+.moon-icon {
+  left: 10px; /* Ay ikonunu sola dayayalım */
+}
+
+/* Temaya göre ikonların görüneceği alanlar */
+.light .sun-icon {
+  display: block;
+}
+
+.light .moon-icon {
+  display: none;
+}
+
+.dark .sun-icon {
+  display: none;
+}
+
+.dark .moon-icon {
+  display: block;
+}
+
+.menu {
+  position: absolute;
+  width: auto;
+  height: auto;
+  right: 2%;
+  top: 2%;
+  background-color: var(--clr-menu);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  gap: 10px;
+  color: var(--clr-font);
+}
+
+.notifications {
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 23px;
+  transition: color 0.3s linear;
+}
+
+.notifications:hover {
+  color: rgb(153, 27, 27);
+}
+
+.ayrac {
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.userpic {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dashboard {
+  width: 100%; /* Sayfanın tamamını kaplayacak */
+  height: 100%; /* Tüm ekranı doldurması için */
+  display: flex;
+  justify-content: center; /* Merkeze yerleştirme */
+}
+.grid-stack {
+  width: 90vw; /* Tam genişlikte kullanılması için */
+  height: 100vh; /* Yükseklik ayarı, tam sayfa için */
+  margin: 0 auto; /* Ortaya hizalama */
+}
+.grid-stack-item {
+  background-color:var(--clr-widget);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px; /* İç boşluk */
+  margin: 5px; /* Dış boşluk */
+}
+
+.pinned {
+  color: red; /* Pinlendiğinde kırmızı olabilir */
+}
