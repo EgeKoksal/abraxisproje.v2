@@ -12,7 +12,7 @@
   --clr-li: hsl(0, 0%, 87%); /* li */
   --clr-widget: hsl(0, 0%, 81%); /* widget */
   --clr-icon: hsl(0, 7%, 94%); /* icon */
-  --clr-primary-9: #252525; 
+  --clr-gridline: #252525; 
 }
 
 :root[data-theme="dark"] {
@@ -214,12 +214,12 @@ li:hover {
   margin: 0 auto; /* Ortaya hizalama */
 }
 .grid-stack-item {
-  background-color:var(--clr-widget);
   border-radius: 10px;
   overflow: hidden;
-  padding: 10px; /* İç boşluk */
-  margin: 5px; /* Dış boşluk */
+  margin: 10px 10px; /* Üst-alt 10px, sağ-sol 20px boşluk */
 }
+
+
 
 .pinned {
   color: red; /* Pinlendiğinde kırmızı olabilir */

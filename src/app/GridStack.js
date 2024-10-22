@@ -23,7 +23,7 @@ function Grid() {
           handles: "e, se, s, sw, w", // Köşelerden yeniden boyutlandırma
         },
         disableOneColumnMode: true, // Küçük ekranlar için tek sütun modunu devre dışı bırak
-        margin: 5, // Widget'lar arasında 10px boşluk
+        
       });
 
       gridRef.current = grid; // GridStack referansını kaydet
@@ -91,7 +91,7 @@ function Grid() {
         data-gs-width="12"
         data-gs-height="3"
       >
-        <WorldMapWidget grid={gridRef.current}/>
+        <WorldMapWidget grid={gridRef.current} />
       </div>
     </div>
   );
