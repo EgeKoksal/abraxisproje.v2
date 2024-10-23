@@ -16,17 +16,20 @@ function Grid() {
     // Eğer grid zaten başlatılmışsa tekrar başlatma
     if (!gridRef.current) {
       const grid = GridStack.init({
-        column: 12, // 4 sütun grid sistemi
+        column: 12, // 12 sütun grid sistemi
+        row:6,
         float: true, // Draggable bileşenler sabit bir sırada kalmaz, hareket edebilir
         cellHeight: "auto", // Otomatik hücre yüksekliği
         resizable: {
           handles: "e, se, s, sw, w", // Köşelerden yeniden boyutlandırma
+          handle: ".grid-stack-item"
         },
         disableOneColumnMode: true, // Küçük ekranlar için tek sütun modunu devre dışı bırak
-        
+        staticGrid: false,  // Taşınabilirliği etkinleştirmek için staticGrid'i false yapıyoruz
       });
 
       gridRef.current = grid; // GridStack referansını kaydet
+   
     }
 
     return () => {
@@ -91,7 +94,7 @@ function Grid() {
         data-gs-width="12"
         data-gs-height="3"
       >
-        <WorldMapWidget grid={gridRef.current} />
+        <WorldMapWidget />
       </div>
     </div>
   );

@@ -209,17 +209,15 @@ li:hover {
   justify-content: center; /* Merkeze yerleştirme */
 }
 .grid-stack {
-  width: 90vw; /* Tam genişlikte kullanılması için */
-  height: 100vh; /* Yükseklik ayarı, tam sayfa için */
-  margin: 0 auto; /* Ortaya hizalama */
+  width: 90vw;
+  max-height: 90vh;
+  margin: 0 auto;
+  overflow: hidden; /* Widget'ların taşmasını engelle */
 }
 .grid-stack-item {
   border-radius: 10px;
   overflow: hidden;
-  margin: 10px 10px; /* Üst-alt 10px, sağ-sol 20px boşluk */
 }
-
-
 
 .pinned {
   color: red; /* Pinlendiğinde kırmızı olabilir */
