@@ -2,12 +2,13 @@ import React, { useEffect, useRef } from "react";
 import { GridStack } from "gridstack";
 import "gridstack/dist/gridstack.css";
 
-import RamCpuWidget from "../presentation/components/ramcpu/RamCpuWidget";
+import RamWidget from "../presentation/components/ram/RamWidget";
 import MostRequestedApiWidget from "../presentation/components/mostrequestedapi/MostRequestedApiWidget";
 import ReturnTimesWidgetApi from "../presentation/components/returntimesapi/ReturnTimesApiWidget";
 import ServerUsageWidget from "../presentation/components/serverusage/ServerUsageWidget";
 import UserLogWidget from "../presentation/components/userlog/UserLogWidget";
 import WorldMapWidget from "../presentation/components/worldmap/WorldMapWidget";
+import CpuWidget from "../presentation/components/cpu/CpuWidget";
 
 function Grid() {
   const gridRef = useRef(null); // GridStack referansı
@@ -22,7 +23,7 @@ function Grid() {
         cellHeight: "auto", // Otomatik hücre yüksekliği
         resizable: {
           handles: "e, se, s, sw, w", // Köşelerden yeniden boyutlandırma
-          handle: ".grid-stack-item"
+          
         },
         disableOneColumnMode: true, // Küçük ekranlar için tek sütun modunu devre dışı bırak
         staticGrid: false,  // Taşınabilirliği etkinleştirmek için staticGrid'i false yapıyoruz
@@ -45,11 +46,20 @@ function Grid() {
       <div
         className="grid-stack-item"
         data-gs-x="0"
+        data-gs-y="8"
+        data-gs-width="6"
+        data-gs-height="2"
+      >
+        <CpuWidget />
+      </div>
+      <div
+        className="grid-stack-item"
+        data-gs-x="0"
         data-gs-y="0"
         data-gs-width="4"
         data-gs-height="3"
       >
-        <RamCpuWidget />
+        <RamWidget />
       </div>
       <div
         className="grid-stack-item"
@@ -96,6 +106,7 @@ function Grid() {
       >
         <WorldMapWidget />
       </div>
+      
     </div>
   );
 }
